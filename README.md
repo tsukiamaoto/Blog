@@ -18,7 +18,7 @@ npm install
 You must both start frontend and backend
 
 #### frontend
-Go to `client` folder to start, the port is `8000`, so input [localhost:8000](localhost:8000) in your browser.
+Go to `client` folder to start, the port is `8000`, so input [localhost:8000](127.0.0.1:8000) in your browser.
 ``` javascript
 npm start
 ```
