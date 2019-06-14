@@ -1,33 +1,33 @@
+import * as types from '../actions/types'
 
 const initialState = {
-    loading: true ,
-    error: false ,
-    payload: [] ,
+  loading: true ,
+  error: false ,
+  posts: [] ,
 };
 
 const posts = ( state = initialState , action) => {
-    //console.log(action.payload);
-    switch(action.type){
-        case 'LOADING':
-            return Object.assign({} , state ,
-                {
-                    loading: true ,
-                });
-        case 'FAILED':
-            return Object.assign({} , state ,
-                {
-                    loading: false ,
-                    error: true ,
-                });
-        case 'SUCCESS':
-            return Object.assign({} , state ,                
-                {
-                    loading: false ,
-                    payload: action.payload ,
-                });
-        default:
-            return state;
-    }
+  switch(action.type){
+    case types.FETCH_ALL_POSTS:
+      return Object.assign({} , state ,
+        {
+          loading: true ,
+        });
+    case types.FETCH_ALL_POSTS_FAILED:
+      return Object.assign({} , state ,
+        {
+          loading: false ,
+          error: true ,
+        });
+    case types.RECEIVE_ALL_POSTS:
+      return Object.assign({} , state ,                
+        {
+          loading: false ,
+          posts: action.posts ,
+        });
+    default:
+      return state;
+  }
 };
 
 export default posts;
